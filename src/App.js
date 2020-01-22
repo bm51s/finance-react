@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Card from "./Card";
+import Reference from "./Reference";
 import "./styles.css";
 
 export default class App extends React.Component {
@@ -41,6 +42,7 @@ export default class App extends React.Component {
         {this.state.params.map(par => (
           <Card info={par} />
         ))}
+        <Reference />
         <div>test</div>
       </>
     );
