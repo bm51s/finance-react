@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-
 import Card from "./Card";
+import "./styles.css";
 
 export default class App extends React.Component {
   state = {

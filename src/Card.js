@@ -20,7 +20,7 @@ export default class Card extends React.Component {
             {this.props.info.day_change}
           </div>
           <div className="card-details__percent">
-            {this.props.info.change_pct}
+            ({this.props.info.change_pct}%)
           </div>
         </div>
       </div>
