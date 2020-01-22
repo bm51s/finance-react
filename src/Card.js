@@ -23,6 +23,12 @@ export default class Card extends React.Component {
             ({this.props.info.change_pct}%)
           </div>
         </div>
+        <div class="card-date">
+          <div class="card-date__last-trading">
+            {this.props.info.last_trade_time}
+          </div>
+          <div class="card-date__timezone">{this.props.info.timezone}</div>
+        </div>
       </div>
     );
   }
