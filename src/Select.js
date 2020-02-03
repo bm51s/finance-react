@@ -10,12 +10,16 @@ export default class Select extends React.Component {
   }
 
   handleOnChange(event) {
-    console.log(this.state.selectedItem);
     console.log(3);
-    this.setState({
-      selectedItem: event.target.value
-    });
-    console.log(this.state.selectedItem);
+    this.setState(
+      {
+        selectedItem: event.target.value
+      },
+      () => {
+        console.log("new state: " + this.state.selectedItem);
+      }
+    );
+    console.log("prev state: " + this.state.selectedItem);
   }
 
   render() {
