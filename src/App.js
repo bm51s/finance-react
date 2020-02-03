@@ -39,8 +39,8 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-        {this.state.params.map(par => (
-          <Card info={par} />
+        {this.state.params.map((par, index) => (
+          <Card key={index} info={par} />
         ))}
         <Reference />
         <div>test</div>
