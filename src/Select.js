@@ -17,6 +17,7 @@ export default class Select extends React.Component {
       },
       () => {
         console.log("new state: " + this.state.selectedItem);
+        this.props.handler();
       }
     );
     console.log("prev state: " + this.state.selectedItem);

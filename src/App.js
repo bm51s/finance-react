@@ -6,12 +6,26 @@ import Select from "./Select";
 import "./styles.css";
 
 export default class App extends React.Component {
-  state = {
-    params: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      params: [],
+      company: ["snap", "tsla"],
+      counter: 0
+    };
+
+    this.handler = this.handler.bind(this);
+  }
+
+  handler = () => {
+    this.setState(prevState => {
+      return { counter: prevState.counter + 1 };
+    });
+    console.log("app counter: " + this.state.counter);
   };
 
   componentDidMount() {
-    let company = this.props.company,
+    let company = this.state.company.join(),
       token = "uojwh6sISmZX6qqbgzuh3jruxQJzKJJP9VxMhunjDIZEqJO770i8vAWtitKw";
     axios
       .get(
@@ -40,7 +54,7 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-        <Select />
+        <Select handler={this.handler} />
         {this.state.params.map((par, index) => (
           <Card key={index} info={par} />
         ))}
